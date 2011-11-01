@@ -177,9 +177,9 @@
    * @return {String} hmac.
    */
   sha256: function (str) {
-    //var sha256 = new sjcl.hash.sha256;
-    var bits = sjcl.hash.sha256.hash(str);
-    var hash = sjcl.codec.hex.fromBits(bits);
+    var bits, hash;
+    bits = sjcl.hash.sha256.hash(str);
+    hash = sjcl.codec.hex.fromBits(bits);
     return hash;
   },
 
