@@ -14,6 +14,17 @@
  */
 
 /**
+ * Shortcut to get a sha256 hex string.
+ * @param {String} str The data to hash.
+ * @return {String} The hashed hex string.
+ */
+sjcl.sha256 = function (str) {
+    var bits = sjcl.hash.sha256.hash(str);
+    var hash = sjcl.codec.hex.fromBits(bits);
+    return hash;
+};
+
+/**
  * Context for a SHA-256 operation in progress.
  * @constructor
  * @class Secure Hash Algorithm, 256 bits.
